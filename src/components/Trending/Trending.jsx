@@ -13,21 +13,21 @@ const Trending = () => {
 
   const getTrending = async() => {
 
-    const check = localStorage.getItem("Trending");
+    // const check = localStorage.getItem("Trending");
 
-    if(check){
-      setTrends(JSON.parse(check))
-    } else {
+    // if(check){
+    //   setTrends(JSON.parse(check))
+    // } else {
       const api = await fetch(
         `https://api.spoonacular.com/recipes/random?apiKey=f9a3b5aa7e284b55ba91945b369a8628&number=9`
       );
   
-      localStorage.setItem("Trending", JSON.stringify(data.recipes));
+      //localStorage.setItem("Trending", JSON.stringify(data.recipes));
       const data = await api.json();
       console.log(data);
   
       setTrends(data.recipes)
-    }
+    // }
     
 
 
